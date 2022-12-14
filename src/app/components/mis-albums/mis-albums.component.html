@@ -1,0 +1,50 @@
+<div class="flex flex-col relative font-mont">
+  <h1 class="text-black text-5xl font-bold">Mis Álbumes</h1>
+  <div class="rounded relative mt-10">
+    <img
+      src="../../../assets/img/car-left.png"
+      alt=""
+      class="-z-10 absolute left-0"
+    />
+
+    <img
+      src="../../../assets/img/car-right.png"
+      alt=""
+      class="-z-10 absolute right-0"
+    />
+    <div class="mt-14 w-10/12 mx-auto font-mont">
+      <div class="flex flex-row justify-evenly">
+        <ng-container *ngFor="let album of albumes">
+          <div
+            class="bg-transparent border-neutral-200 border-2 rounded-sm pt-1 px-1 pb-2 shadow-md h-80 hover:scale-110 transition-all"
+          >
+            <img
+              src="{{ album.picture }}"
+              alt=""
+              class="w-52 h-40 object-cover"
+            />
+            <h4 class="text-xl font-bold mt-2 text-center">{{ album.name }}</h4>
+            <h6 class="mt-2 text-sm ml-1">{{ album.subhead }}</h6>
+            <div class="flex flex-row justify-evenly mt-10">
+              <button>Ver</button>
+              <button class="bg-ui rounded-xl py-1 px-4 font-semibold text-sm">
+                Compartir
+                <span
+                  class="material-symbols-outlined font-bold text-base align-middle"
+                >
+                  share
+                </span>
+              </button>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+
+    <img
+      src="../../../assets/img/lines.png"
+      alt=""
+      class="-ml-20 -my-24 absolute"
+    />
+  </div>
+</div>

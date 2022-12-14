@@ -1,0 +1,37 @@
+<div class="flex flex-col font-mont mx-auto w-11/12">
+  <h1 class="text-black text-5xl font-bold">Momentos destacados</h1>
+
+  <div class="flex flex-row justify-between mt-20">
+    <ng-container *ngFor="let hl of highlights">
+      <div class="bg-black w-60 pb-5">
+        <img
+          src="../../../assets/img/globos.png"
+          alt=""
+          *ngIf="!hl.isSet"
+          class="bg-slate-100 h-80 w-60"
+        />
+        <img
+          src="{{ hl.picture }}"
+          alt=""
+          class="h-80 object-cover w-60"
+          *ngIf="hl.isSet"
+        />
+        <span
+          class="material-symbols-outlined bg-ui rounded-full p-2 ml-24 -mt-5 font-extrabold hover:cursor-pointer"
+          *ngIf="!hl.isSet"
+        >
+          add
+        </span>
+        <h2
+          class="text-white text-center font-normal text-sm mx-auto px-2 pb-2 mt-3"
+          *ngIf="!hl.isSet"
+        >
+          Agregar tu momento destacado
+        </h2>
+        <h2 class="text-white text-center mt-10" *ngIf="hl.isSet">
+          {{ hl.name }}
+        </h2>
+      </div>
+    </ng-container>
+  </div>
+</div>

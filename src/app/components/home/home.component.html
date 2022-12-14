@@ -1,0 +1,27 @@
+<div class="bg-home bg-cover h-136 w-full">
+  <app-navbar></app-navbar>
+  <div class="flex flex-col ml-14">
+    <h1 class="text-white text-9xl font-bold font-mont mt-64 ml-20">
+      LifeBook
+    </h1>
+    <button
+      class="bg-ui text-white w-52 py-3 px-2 font-semibold mt-24 ml-36 rounded-lg"
+    >
+      Crear nueva publicación
+    </button>
+    <h4 class="text-white font-mont mt-28 ml-16">
+      Tu nueva forma de guardar recuerdos
+    </h4>
+  </div>
+</div>
+<div class="flex flex-col relative">
+  <div class="flex flex-row justify-between -z-10">
+    <img src="../../../assets/img/home-bg-rect.png" alt="" />
+    <img src="../../../assets/img/triangules.png" alt="" class="w-auto h-44" />
+  </div>
+  <app-mis-albums class="z-10 absolute top-44 left-14 w-11/12"></app-mis-albums>
+</div>
+<div class="mt-96 pt-32 pb-20">
+  <app-home-highlights></app-home-highlights>
+</div>
+<app-footer></app-footer>
