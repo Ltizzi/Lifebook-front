@@ -1,0 +1,63 @@
+<div
+  class="bg-login h-screen w-screen bg-cover bg-center flex flex-row justify-around"
+>
+  <div class="my-auto">
+    <img src="../../../assets/img/LifeBook2 2.png" alt="" class="w-3/4" />
+  </div>
+
+  <div class="rounded bg-white text-center font-mont py-14 px-20 my-auto">
+    <h1 class="text-black font-bold text-xl">Inicio de Sesión</h1>
+    <h2 class="text-black text-sm mt-4">
+      ¿Eres un usuario nuevo?
+      <a href="" class="text-sky-600 font-semibold">Crear una cuenta nueva</a>
+    </h2>
+    <form [formGroup]="loginControl" class="flex flex-col mt-10">
+      <div class="relative">
+        <!-- <span class="material-symbols-outlined"> account_circle </span> -->
+        <i
+          class="fa-solid fa-circle-user absolute z-10 left-2 top-2 text-xl pl-2"
+        ></i>
+        <input
+          type="email"
+          placeholder="Ingrese su e-mail"
+          formControlName="email"
+          class="border-l-gray-300 border-2 w-96 py-2 px-5 mb-5 placeholder:pl-10 relative"
+        />
+      </div>
+      <div class="relative">
+        <span
+          class="material-symbols-outlined absolute z-10 left-2 top-1 text-3xl pl-2"
+        >
+          key
+        </span>
+
+        <input
+          type="password"
+          placeholder="Ingrese su contraseña"
+          formControlName="password"
+          class="border-l-gray-300 border-2 w-96 py-2 px-5 mb-5 relative placeholder:pl-10"
+        />
+      </div>
+      <div class="flex flex-row justify-between">
+        <div>
+          <input
+            type="checkbox"
+            id="remember"
+            class="checked:fill-ui indeterminate:bg-slate-400"
+          />
+          <label for="remember" class="ml-2">Recordarme</label>
+        </div>
+        <div>
+          <h3 class="font-mont">
+            <a href="" class="text-sky-600 font-semibold"
+              >Olvidé mi contraseña</a
+            >
+          </h3>
+        </div>
+      </div>
+      <button class="py-1 px-2 bg-ui text-white w-fit right-0 self-end mt-10">
+        Ingresar
+      </button>
+    </form>
+  </div>
+</div>

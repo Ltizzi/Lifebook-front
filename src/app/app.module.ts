@@ -7,6 +7,9 @@ import { HomeComponent } from './components/home/home.component';
 import { MisAlbumsComponent } from './components/mis-albums/mis-albums.component';
 import { HomeHighlightsComponent } from './components/home-highlights/home-highlights.component';
 import { FooterComponent } from './components/footer/footer.component';
+import { LoginComponent } from './components/login/login.component';
+import { AppRoutingModule } from './app-routing.module';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,12 +18,11 @@ import { FooterComponent } from './components/footer/footer.component';
     HomeComponent,
     MisAlbumsComponent,
     HomeHighlightsComponent,
-    FooterComponent
+    FooterComponent,
+    LoginComponent,
   ],
-  imports: [
-    BrowserModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, ReactiveFormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

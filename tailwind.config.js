@@ -7,6 +7,7 @@ module.exports = {
         home: "url('/assets/img/homefondo.png')",
         homeleft: "url('/assets/img/home-bg-rect.png')",
         triangules: "url('/assets/img/triangules.png')",
+        login: "url('/assets/img/bg-login.png')",
       },
       spacing: {
         136: "50rem",
