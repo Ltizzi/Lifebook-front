@@ -18,7 +18,8 @@ export class LoginComponent {
   login() {
     console.log('logueando..');
     console.log(this.loginControl.value);
-    this.router.navigate(['/']);
+    if (!this.Email?.errors && !this.Password?.errors)
+      this.router.navigate(['/']);
   }
 
   get Email() {

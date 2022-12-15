@@ -1,0 +1,180 @@
+<div
+  class="bg-login h-screen w-screen bg-cover bg-center flex flex-row justify-around"
+>
+  <div class="my-auto">
+    <img src="../../../assets/img/LifeBook2 2.png" alt="" class="w-3/4" />
+  </div>
+
+  <div class="rounded bg-white text-center font-mont py-14 px-20 my-auto">
+    <h1 class="text-black font-bold text-xl">Registro de usuario</h1>
+
+    <form
+      [formGroup]="registerControl"
+      (ngSubmit)="register()"
+      class="flex flex-col mt-10"
+    >
+      <div class="relative">
+        <!-- <span class="material-symbols-outlined"> account_circle </span> -->
+        <i
+          class="fa-solid fa-circle-user absolute z-10 left-2 top-2 text-xl pl-2"
+        ></i>
+        <input
+          type="email"
+          placeholder="Ingrese su e-mail"
+          formControlName="email"
+          class="border-l-gray-300 border-2 w-96 py-2 px-5 pl-14 mb-7 placeholder:pl-1 relative"
+          required
+          autofocus
+          [ngClass]="{
+            'border-red-500 border-4': Email?.errors && Email?.touched,
+            'border-green-300 border-4 ': !Email?.errors && Email?.touched
+          }"
+        />
+        <div class="-mt-5 -ml-28" *ngIf="Email?.errors && Email?.touched">
+          <p
+            class="text-red-500 font-semibold"
+            *ngIf="Email?.hasError('required')"
+          >
+            No puede loguear sin un e-mail
+          </p>
+          <p
+            class="text-red-500 font-semibold"
+            *ngIf="Email?.hasError('email')"
+          >
+            Ingrese un e-mail válido
+          </p>
+        </div>
+      </div>
+
+      <div class="relative">
+        <!-- <span class="material-symbols-outlined"> account_circle </span> -->
+        <i
+          class="fa-solid fa-circle-user absolute z-10 left-2 top-2 text-xl pl-2"
+        ></i>
+        <input
+          type="text"
+          placeholder="Ingrese su nombre"
+          formControlName="firstName"
+          class="border-l-gray-300 border-2 w-96 py-2 px-5 pl-14 mb-7 placeholder:pl-1 relative"
+          required
+          autofocus
+          [ngClass]="{
+            'border-red-500 border-4': FirstName?.errors && FirstName?.touched,
+            'border-green-300 border-4 ':
+              !FirstName?.errors && FirstName?.touched
+          }"
+        />
+        <div
+          class="-mt-5 -ml-28"
+          *ngIf="FirstName?.errors && FirstName?.touched"
+        >
+          <p
+            class="text-red-500 font-semibold"
+            *ngIf="FirstName?.hasError('required')"
+          >
+            No puede registrarse sin nombre
+          </p>
+          <p
+            class="text-red-500 font-semibold"
+            *ngIf="FirstName?.hasError('minLength')"
+          >
+            El nombre debe tener más de tres caracteres
+          </p>
+        </div>
+      </div>
+      <div class="relative">
+        <i
+          class="fa-solid fa-circle-user absolute z-10 left-2 top-2 text-xl pl-2"
+        ></i>
+        <input
+          type="text"
+          placeholder="Ingrese su apellido"
+          formControlName="lastName"
+          class="border-l-gray-300 border-2 w-96 py-2 px-5 pl-14 mb-7 placeholder:pl-1 relative"
+          required
+          autofocus
+          [ngClass]="{
+            'border-red-500 border-4': LastName?.errors && LastName?.touched,
+            'border-green-300 border-4 ': !LastName?.errors && LastName?.touched
+          }"
+        />
+        <div class="-mt-5 -ml-20" *ngIf="LastName?.errors && LastName?.touched">
+          <p
+            class="text-red-500 font-semibold"
+            *ngIf="LastName?.hasError('required')"
+          >
+            Necesita un apellido para registrarse
+          </p>
+          <p
+            class="text-red-500 font-semibold"
+            *ngIf="LastName?.hasError('minLength')"
+          >
+            El apellido tiene que tener más de tres caracteres
+          </p>
+        </div>
+      </div>
+      <div class="relative">
+        <!-- <span class="material-symbols-outlined"> account_circle </span> -->
+        <i
+          class="fa-solid fa-circle-user absolute z-10 left-2 top-2 text-xl pl-2"
+        ></i>
+        <input
+          type="text"
+          placeholder="Ingrese su nombre de usuario"
+          formControlName="username"
+          class="border-l-gray-300 border-2 w-96 py-2 px-5 pl-14 mb-7 placeholder:pl-1 relative"
+          required
+          autofocus
+          [ngClass]="{
+            'border-red-500 border-4': Username?.errors && Username?.touched,
+            'border-green-300 border-4 ': !Username?.errors && Username?.touched
+          }"
+        />
+        <div class="-mt-5 -ml-4" *ngIf="Username?.errors && Username?.touched">
+          <p
+            class="text-red-500 font-semibold"
+            *ngIf="Username?.hasError('required')"
+          >
+            No puede registrarse sin nombre de usuario
+          </p>
+          <p
+            class="text-red-500 font-semibold"
+            *ngIf="Username?.hasError('minLength')"
+          >
+            El nombre de usuario debe tener más de seis caracteres
+          </p>
+        </div>
+      </div>
+      <div class="relative mt-2">
+        <span
+          class="material-symbols-outlined absolute z-10 left-2 top-1 text-3xl pl-2"
+        >
+          key
+        </span>
+
+        <input
+          type="password"
+          placeholder="Ingrese su contraseña"
+          formControlName="password"
+          class="border-l-gray-300 border-2 w-96 py-2 px-5 mb-5 pl-14 relative placeholder:pl-1"
+          [ngClass]="{
+            'border-red-500 border-4': Password?.errors && Password?.touched,
+            'border-green-300 border-4 ': !Password?.errors && Password?.touched
+          }"
+        />
+        <div class="-mt-5 -ml-16" *ngIf="Password?.errors && Password?.touched">
+          <p
+            class="text-red-500 font-semibold"
+            *ngIf="Email?.hasError('required')"
+          >
+            No puede loguear sin una contraseña
+          </p>
+        </div>
+      </div>
+
+      <button class="py-1 px-2 bg-ui text-white w-fit right-0 self-end mt-10">
+        Registrar usuario
+      </button>
+    </form>
+  </div>
+</div>
