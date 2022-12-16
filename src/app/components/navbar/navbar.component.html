@@ -27,14 +27,29 @@
         </li>
         <li
           class="mr-10 hover:border-b-2 hover:border-black pb-4 hover:font-semibold hover:cursor-pointer"
+          *ngIf="isLogged"
+        >
+          {{ user.username }}
+        </li>
+        <li
+          class="mr-10 hover:border-b-2 hover:border-black pb-4 hover:font-semibold hover:cursor-pointer"
+          *ngIf="!isLogged"
         >
           Mi Perfil
         </li>
         <li
           class="mr-10 hover:border-b-2 hover:border-black pb-4 hover:font-semibold hover:cursor-pointer"
           routerLink="/login"
+          *ngIf="!isLogged"
         >
           Login
+        </li>
+        <li
+          class="mr-10 hover:border-b-2 hover:border-black pb-4 hover:font-semibold hover:cursor-pointer"
+          *ngIf="isLogged"
+          (click)="logout()"
+        >
+          Logout
         </li>
       </ul>
     </div>

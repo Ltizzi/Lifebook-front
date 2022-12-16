@@ -6,8 +6,16 @@
     </h1>
     <button
       class="bg-ui text-white w-52 py-3 px-2 font-semibold mt-24 ml-36 rounded-lg"
+      *ngIf="isLogged"
     >
       Crear nueva publicación
+    </button>
+    <button
+      class="bg-ui text-white w-52 py-3 px-2 font-semibold mt-24 ml-36 rounded-lg"
+      *ngIf="!isLogged"
+      routerLink="/signup"
+    >
+      Crear usuario
     </button>
     <h4 class="text-white font-mont mt-28 ml-16">
       Tu nueva forma de guardar recuerdos

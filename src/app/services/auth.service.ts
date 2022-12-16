@@ -1,3 +1,4 @@
+import { UserService } from './user.service';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';
@@ -52,12 +53,13 @@ export class AuthService {
   }
 
   get currentUser() {
-    if (sessionStorage.getItem('token') != null) {
+    if (sessionStorage.getItem('token') != null && !this.isTokenExpired()) {
       console.log(
         'El mail del usuario es ' +
-          this.jwtHelper.decodeToken(this.currentUserSubject.value)
+          this.jwtHelper.decodeToken(this.currentUserSubject.value).sub
       );
-      return this.jwtHelper.decodeToken(this.currentUserSubject.value);
+
+      return this.jwtHelper.decodeToken(this.currentUserSubject.value).sub;
     } else return null;
   }
 
