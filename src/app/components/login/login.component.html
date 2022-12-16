@@ -15,7 +15,7 @@
     </h2>
     <form
       [formGroup]="loginControl"
-      (ngSubmit)="login()"
+      (ngSubmit)="login($event)"
       class="flex flex-col mt-10"
     >
       <div class="relative">
@@ -92,6 +92,9 @@
             >
           </h3>
         </div>
+      </div>
+      <div *ngIf="invalidLogin">
+        <p class="text-red-500 font-semibold">Usuario/Contraseña erróneos</p>
       </div>
       <button class="py-1 px-2 bg-ui text-white w-fit right-0 self-end mt-10">
         Ingresar

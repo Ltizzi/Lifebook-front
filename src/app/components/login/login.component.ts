@@ -1,3 +1,4 @@
+import { AuthService } from './../../services/auth.service';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
@@ -13,13 +14,21 @@ export class LoginComponent {
     password: new FormControl('', [Validators.required]),
   });
 
-  constructor(private router: Router) {}
+  invalidLogin: Boolean = false;
 
-  login() {
+  constructor(private router: Router, private authServ: AuthService) {}
+
+  login(event: Event) {
+    event.preventDefault;
     console.log('logueando..');
-    console.log(this.loginControl.value);
-    if (!this.Email?.errors && !this.Password?.errors)
-      this.router.navigate(['/']);
+    let data = this.loginControl.value;
+    this.authServ.login(data).subscribe((response) => {
+      if (response != null) {
+        this.router.navigate(['/']);
+      } else {
+        this.invalidLogin = true;
+      }
+    });
   }
 
   get Email() {
