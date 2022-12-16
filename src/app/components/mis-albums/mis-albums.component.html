@@ -1,6 +1,6 @@
 <div class="flex flex-col relative font-mont">
   <h1 class="text-black text-5xl font-bold ml-32">Mis Álbumes</h1>
-  <div class="rounded relative mt-10 w-10/12 mx-auto">
+  <div class="rounded relative mt-10 w-11/12 mx-auto">
     <img
       src="../../../assets/img/car-left.png"
       alt=""
@@ -23,11 +23,15 @@
               alt=""
               class="w-52 h-40 object-cover"
             />
-            <h4 class="text-xl font-bold mt-2 text-center">{{ album.name }}</h4>
-            <h6 class="mt-2 text-sm ml-1">{{ album.subhead }}</h6>
+            <h4 class="text-2xl font-bold mt-2 text-center">
+              {{ album.name }}
+            </h4>
+            <h6 class="mt-2 text-base ml-1">{{ album.subhead }}</h6>
             <div class="flex flex-row justify-evenly mt-10">
               <button>Ver</button>
-              <button class="bg-ui rounded-xl py-1 px-4 font-semibold text-sm">
+              <button
+                class="bg-ui rounded-xl py-1 px-3 font-semibold text-base"
+              >
                 Compartir
                 <span
                   class="material-symbols-outlined font-bold text-base align-middle"
